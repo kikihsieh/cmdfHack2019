@@ -1,0 +1,59 @@
+.dest-pic {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+}
+
+.content {
+	margin: 10px;
+}
+
+.sidebar {
+	margin: 20px;
+}
+
+.reviews {
+	height: 55px;
+	width: 500px;
+	overflow: scroll;
+	background-color: lightblue;
+	padding: 10px;
+	font-family:'Century Gothic', sans-serif !important ;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.review-title {
+	padding-bottom: 4px;
+	font-size: 13px;
+}
+
+.activities {
+	height: 55px;
+	width: 500px;
+	overflow: scroll;
+	background-color: lightpink;
+	padding: 10px;
+	font-family:'Century Gothic', sans-serif !important ;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.activities-title {
+	padding-bottom: 4px;
+	font-size: 13px;
+}
+
+.bg-image {
+  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+  background-size: cover;
+  background-position: center;
+}
+
+p {
+	font-family:'Century Gothic', sans-serif !important ;
+	font-size: 13px;
+}
+
+h3 {
+	font-size: 25px;
+	letter-spacing: 3px;
+}
