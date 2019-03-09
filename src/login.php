@@ -1,63 +1,42 @@
 <?php
-
-session_start();
-
-if( isset($_SESSION['user_id']) ){
-	header("Location: /");
-}
-
 require 'connect.php';
 
-if(!empty($_POST['email']) && !empty($_POST['password'])):
+if(isset($_POST['username'])){
+	$uname=$_POST['username'];
+	$password=$_POST['password'];
+
+	$conn = OpenCon();
+	$sql="select * from Users where username='".$uname."'AND password='".$password."' limit 1";
+	$result=$conn->query($sql);
+	if($result->num_rows==1){
 	
-	$records = $conn->prepare('SELECT id,email,password FROM users WHERE email = :email');
-	$records->bindParam(':email', $_POST['email']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$message = '';
-
-	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
-
-		$_SESSION['user_id'] = $results['id'];
-		header("Location: /");
+		echo " You Have Successfully Logged in";
+		exit();
 
 	} else {
-		$message = 'Sorry, those credentials do not match';
+		echo " You Have Entered Incorrect Password";
+		exit();
 	}
+}
 
-endif;
 
 ?>
-
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Login Below</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	<title>Form in Design</title>
 </head>
 <body>
-
-	<div class="header">
-		<a href="/">Your App Name</a>
+	<div class="container">
+		<img src="IMAGE"/>
+		<form method="POST" action="#">
+			<div class="form_input">
+				<input type="text" name="username" placeholder=" Enter Your Name"/>
+			</div>
+			<div class="form_input">
+				<input type="password" name="password" placeholder=" Enter Your Password "/>
+			</div>
+			<input type="submit" name="submit" value="LOGIN" class="btn-login"/>
+		</form>
 	</div>
-
-	<?php if(!empty($message)): ?>
-		<p><?= $message ?></p>
-	<?php endif; ?>
-
-	<h1>Login</h1>
-	<span>or <a href="src/register.php">register here</a></span>
-
-	<form action="src/login.php" method="POST">
-		
-		<input type="text" placeholder="Enter your email" name="email">
-		<input type="password" placeholder="and password" name="password">
-
-		<input type="submit">
-
-	</form>
-
 </body>
 </html>
