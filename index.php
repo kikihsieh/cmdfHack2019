@@ -8,11 +8,11 @@ include 'src/login.php';
 <html>
 <head>
 	<title>Welcome to your Web App</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		LOGIN:
 		<form method="POST" action="#">
 			<div class="form_input">
@@ -27,6 +27,7 @@ include 'src/login.php';
 		<br>
 		REGISTER:
 		<span><a href="src/register.php">register here!</a></span>
+		
 	</div>
 
 	<!-- scripts -->

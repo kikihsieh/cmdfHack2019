@@ -1,15 +1,43 @@
-<form method="post" action="/cmdfHack2019/src/register.php">
-	<div class="form_input">
-		<input type="text" name="reg_username" placeholder=" Enter Your Name"/>
-	</div>
-	<div class="form_input">
-		<input type="password" name="reg_password" placeholder=" Enter Your Password "/>
-	</div>
-	<div class="form_input">
-		<input type="password" name="reg_confirm_password" placeholder=" Enter Your Password "/>
-	</div>
-	<input type="submit" name="submit" value="REGISTER" class="btn-login"/>
-</form>
+<html>
+<head>
+	<title>Welcome to your Web App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+		
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+						<center>
+						<h3 class="login-heading mb-4">Become a Femtr!</h3>
+						<form method="post" action="/cmdfHack2019/src/register.php">
+
+							<div class="form-label-group">
+								<input type="text" id="inputUsername" name="reg_username"  class="form-control" placeholder=" Enter Your Name" required autofocus/>
+								<label for="inputUsername"> Create A Username</label>
+							</div>
+
+							<div class="form-label-group">
+								<input type="password" id="inputPass" name="reg_password" class="form-control" placeholder=" Enter Your Password " required/>
+								<label for="inputPass">Enter Your Password</label>
+							</div>
+
+							<div class="form-label-group">
+								<input type="password"  id="inputRePass" name="reg_confirm_password" class="form-control" placeholder=" Re-enter Your Password "required/>
+								<label for="inputRePass">Re-Enter Your Password</label>
+							</div>
+
+						<button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="submit" value="REGISTER" class="btn-login">Register</button>
+
+						</form>
 
 <?php
 require 'connect.php';
@@ -44,3 +72,13 @@ if(isset($_POST['reg_username'])) {
 	
 }
 ?>
+						</center>
+            </div>
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+	</div>
+	</body>
+	</html>

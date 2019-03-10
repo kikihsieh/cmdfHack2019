@@ -8,6 +8,7 @@
   min-height: 100vh;
 }
 
+
 .bg-image {
   background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
   background-size: cover;
@@ -85,4 +86,3 @@
   font-size: 12px;
   color: #777;
 }
-
