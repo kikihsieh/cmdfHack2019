@@ -46,21 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		while($row = $result->fetch_assoc()) {
 			$users .=	'<div class="row">';
 			$users .=	    '<div class="col-lg-4">';
-			$users .=	      '<img class="dest-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">';
+			$users .=	      '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="dest-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">';
 			$users .=	    '</div>';
 			$users .=	    '<div class="col-lg-8 ml-auto">';
 			$users .=	      '<h3>'.$row["username"].'</h3>';
-			$users .=	      '<p>' . $row["firstname"];
-			$users .=	      $row["lastname"];
-			$users .=	      $row["bio"];
-			$users .=	      $row["industry"];
-			$users .=	      $row["education"];
-			$users .=	      $row["interests"];
-			$users .=	      $row["language"];
-			$users .=	      $row["race"];
-			$users .=	      $row["email"];
-			$users .=	      $row["twitter"];
-			$users .=	      $row["linkedin"] . '</p>';
+			$users .=	      '<p><b>' . $row["firstname"] . ' ' . $row["lastname"].'</b><br>';
+			$users .=	      $row["bio"] . '<br>';
+			$users .=		  '<b> interests: </b>' . $row["interests"] . '<br><br>';
+			$users .=	      $row["industry"] .' | '. $row["education"] . '<br>';
+			$users .=	      $row["email"] . ' ' . $row["twitter"] . ' ' . $row["linkedin"] . '</p>';
 			$users .=	    '</div>';
 			$users .=	'</div><hr>';
 		}

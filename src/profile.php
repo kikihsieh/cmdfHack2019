@@ -17,7 +17,7 @@ include 'query.php';
 				<div class=" d-none d-md-flex col-md-4 col-lg-4 profile-bg">
 		            <div class="py-2 flex-grow-1">
 		                <div class="sidebar flex-sm-column">
-		                    <h1 class="my-4 content-left">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
+		                    <h1 class="my-4 content">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
 		                    <div class="col">
 		                    	<form class="form-horizontal" method="POST" action="#">
 									<div class="form_input">
@@ -400,7 +400,7 @@ include 'query.php';
 		                </div>
 		            </div>
 		        </div>
-				<div class="col content-right">
+				<div class="col content">
 					<?php echo displayResults(); ?>
 				</div>
 			</div>
