@@ -10,6 +10,10 @@ if(isset($_POST['education'])) {
 
 	$education = $_POST['education'];
 
+	if ($education === "") {
+		echo "byhtyh";
+	}
+
 	$sql = "SELECT *
 	FROM Users
 	WHERE education = '$education'";
@@ -17,6 +21,7 @@ if(isset($_POST['education'])) {
 	/* template
 	
 	*/
+
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) { 
 			$destinations .=	'<div class="row">';

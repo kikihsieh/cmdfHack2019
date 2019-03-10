@@ -27,7 +27,7 @@ include 'query.php';
 		                    	<form method="POST" action="#">
 									<div class="form_input">
 										<select id="user_country" class="form-control" name="education" placeholder=" Education ">
-											<option value="*">N/A</option>
+											<option value="" >N/A</option>
     										<option value="high_school">High School</option>
     										<option value="bachelors">Bachelors</option>
     										<option value="masters">Masters</option>
@@ -36,6 +36,7 @@ include 'query.php';
 									</div>
 									<div class="form_input">
 										<select id="user_country" class="form-control" name="industry" placeholder=" Education ">
+											<option value="" >N/A</option>
     										<option value="information_security_analyst">Information Security Analyst</option>
     										<option value="computer_systems_analyst">Computer Systems Analyst</option>
     										<option value="software_developer">Software Developer</option>
