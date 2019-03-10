@@ -3,11 +3,49 @@
   --input-padding-y: 0.75rem;
 }
 
+.dest-pic {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+}
+
+.content-left {
+  padding-top: 20px;
+}
+
+.content-right {
+  padding-top: 40px;
+}
+
 .make-me-sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 0 15px;
+}
+
+html, body, .container-fluid {
+  height: 100%;
+}
+
+.sidebar {
+  background-color: #ffe3bc;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    background-color: #ffe3bc;
+  }
+}
+
+.make-me-sticky {
+  position: fixed;
 }
 
 .login,
@@ -17,6 +55,10 @@
 
 .edit_container {
   padding-left: 200px;
+}
+
+.profile-bg {
+  background-color:#ffe3bc;
 }
 
 .bg-image {
