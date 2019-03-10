@@ -34,19 +34,20 @@
 		<div class="edit_container">
 			<br> <br>
 		    <h1>Edit Profile</h1>
-		  	<hr>
+		  	<hr style="max-width: 950px; margin-left:0;">
 			<div class="row">
 		      <!-- left column -->
 		      <div class="col-md-3">
 		        <div class="text-center">
 		          <img src="//placehold.it/255" class="avatar img-circle" alt="avatar"> <br> <br>
-		          <input type="file" class="form-control" name="edit_pic_url">
+		          <input type="file" class="form-control" style="width:259px; margin-left: 5px;" name="edit_pic_url">
 		        </div>
 		      </div>
 		      
 		      <!-- edit form column -->
 		      <div class="col-md-9 personal-info">
-		        <h3>User Info</h3>
+						<h3>User Info</h3>
+						<br>
 		        
 		        <form class="form-horizontal" method="post" action="/cmdfHack2019/src/edit.php">
 		          <div class="form-row">
