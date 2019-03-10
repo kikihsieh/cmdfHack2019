@@ -14,10 +14,13 @@ include 'query.php';
 	<body>
 		<div class="container-fluid">
 			<div class="row no-gutter">
-				<div class=" d-none d-md-flex col-md-4 col-lg-4 profile-bg">
+				<div class=" d-none d-md-flex col-md-4 col-lg-4">
 		            <div class="py-2 flex-grow-1">
 		                <div class="sidebar flex-sm-column">
-		                    <h1 class="my-4 content">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
+		                
+
+		                    <h1 class="my-4 content button-header">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
+
 		                    <div class="col">
 		                    	<form class="form-horizontal" method="POST" action="#">
 									<div class="form_input">
@@ -390,11 +393,17 @@ include 'query.php';
 		                				</select>
 									</div>
 									<hr>
-									<input type="checkbox" name="filter_mentor" value=1> Find Mentor<br>
+									<div class="form_input">
+										<select id="user_country" class="form-control" name="filter_type">
+											<option value="" disabled selected hidden>Find Mentor/Mentee</option>
+		                					<option value="Mentor">Mentor</option>
+						                	<option value="Mentee">Mentee</option>
+						                	<option value="Both">Both</option>
+		                					<option value="">n/a</option> 
+		                				</select>
+									</div>
 									<hr>
-									<input type="checkbox" name="filter_mentee" value=1> Find Mentee<br>
-									<hr>
-									<input type="submit" name="submit" value="Find some awesome women!" class="btn btn-primary"/>
+									<input type="submit" name="submit" value="Find some awesome women!" class="btn btn-primary"/> <p><a href="edit.php" target="_parent" class="tiny-btn">Edit Profile</a></p>
 								</form>
 							</div>
 		                </div>

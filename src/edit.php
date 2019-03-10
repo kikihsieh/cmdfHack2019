@@ -20,9 +20,7 @@
 		$linkedin = $row['linkedin'];
 		$twitter = $row['twitter'];
 		$facebook = $row['facebook'];
-		$mentor = $row['mentor'];
-		$mentee = $row['mentee'];
-		$buddy = $row['buddy'];
+		$type = $row['type'];
 	}
 ?>
 
@@ -32,10 +30,11 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	</head>
 	<body style="background-color:#f1eaff;">
+		<div class="container-fluid">
 		<div class="edit_container">
 			<br> <br>
 		    <h1>Edit Profile</h1>
-		  	<hr style="max-width: 950px; margin-left:0;">
+		  	<hr style="max-width: 850px; margin-left:0;">
 			<div class="row">
 		      <!-- left column -->
 		      <div class="col-md-3">
@@ -47,9 +46,8 @@
 		      
 		      <!-- edit form column -->
 		      <div class="col-md-9 personal-info">
-						<h3>User Info</h3>
-						<br>
-		        
+				<h3>User Info</h3>
+				<br>
 		        <form class="form-horizontal" method="post" action="/cmdfHack2019/src/edit.php">
 		          <div class="form-row">
 							<label class="col-lg-4 control-label">First Name:</label>
@@ -58,11 +56,10 @@
 									<input class="form-control" type="text" name="edit_name" value="<?php echo $firstname?>">
 								</div>
 		            <div class="col-lg-4">
-									<input class="form-control" type="text" name="edit_lastname" value="<?php echo $lastname?>">
+					<input class="form-control" type="text" name="edit_lastname" value="<?php echo $lastname?>">
 		            </div>
 		          </div>
-							<br>
-		       
+				  <br>
 		          <div class="form-row">
 		            <label class="col-lg-8 control-label">Bio:</label>
 		            <div class="col-lg-8" >
@@ -70,7 +67,21 @@
 								<!--<input class="form-control" type="text" name="edit_bio" value="<?php echo $bio?>">-->
 		            </div>
 		          </div>
-							<br>
+				  <br>
+				  <div class="form-row">
+		            <label class="col-lg-8 control-label">I am a...</label>
+		            <div class="col-lg-8">
+		              <div class="ui-select">
+		                <select id="user_country" class="form-control"  name="edit_type">
+		                	<option value="<?php echo $type?>" selected="selected"><?php echo $type?></option>
+		                	<option value="Mentor">Mentor</option>
+		                	<option value="Mentee">Mentee</option>
+		                	<option value="Both">Both</option>
+		                </select>
+		              </div>
+		            </div>
+		          </div>
+				 <br>
 		          <div class="form-row">
 		            <label class="col-lg-8 control-label">Education:</label>
 		            <div class="col-lg-8">
@@ -510,6 +521,7 @@
 		      </div>
 		  </div>
 		</div>
+		</div>
 		
 		<!-- css -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
@@ -537,17 +549,20 @@
 		$linkedin = $_POST['edit_linkedin'];
 		$twitter = $_POST['edit_twitter'];
 		$facebook = $_POST['edit_facebook'];
-
+		$type = $_POST['edit_type'];
 		
 		//echo $username .'<br>'. 'pic_url' .'<br>'. $firstname .'<br>'. $lastname .'<br>'. $bio .'<br>'. $education .'<br>'. $industry .'<br>'. $interests .'<br>'. $country .'<br>'. $language .'<br>'. $race .'<br>'. $email .'<br>'. $linkedin .'<br>'. $twitter;
 		
 
-		$sql = "UPDATE Users SET pic_url='pic_url', firstname='$firstname', lastname='$lastname', bio='$bio', education='$education', industry='$industry', interests='$interests', country='$country',
+		$sql = "UPDATE Users SET pic_url='pic_url', firstname='$firstname', lastname='$lastname', bio='$bio', education='$education', industry='$industry', interests='$interests', country='$country', type='$type',
 			language='$language', race='$race', email='$email', linkedin='$linkedin', twitter='$twitter', facebook='$facebook' WHERE username='$username'";
 		// echo '<br><br>' . $sql;	
 		
 		if ($conn->query($sql) === TRUE) {
-	    	// echo "UPDATED!";
+	    	$URL="profile.php";
+			echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+			echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+
 		} else {
 	    	// echo "Error: " . $sql . "<br>" . $conn->error;
 		}

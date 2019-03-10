@@ -61,11 +61,15 @@ if(isset($_POST['reg_username'])) {
 		echo 'passwords dont match, try again!';
 		return;
 	} else {
-		$sql = "INSERT INTO Users VALUES ('$username', '$password', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null)";
+		$sql = "INSERT INTO Users VALUES ('$username', '$password', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null)";
 	}
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "New User created successfully";
+		session_start(); 
+		$_SESSION['username'] = $username;
+	    $URL="profile.php";
+		echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}

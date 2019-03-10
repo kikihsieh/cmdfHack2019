@@ -8,6 +8,11 @@
   background-repeat: no-repeat; 
 }
 
+.tiny-btn {
+  font-size: 12px;
+  float: right;
+}
+
 .dest-pic {
   object-fit: cover;
   width:250px;
@@ -79,7 +84,7 @@ html, body, .container-fluid {
 }
 
 .edit_container {
-  padding-left: 250px;
+  padding-left: 10%;
 }
 
 .personal-info{

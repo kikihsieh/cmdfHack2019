@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$country = (isset($_POST['filter_country'])) ? $_POST['filter_country'] : "";
 	$language = (isset($_POST['filter_language'])) ? $_POST['filter_language'] : "";
 	$race = (isset($_POST['filter_race'])) ? $_POST['filter_race'] : "";
+	$type = (isset($_POST['filter_type'])) ? $_POST['filter_type'] : "";
 	$whereParts = array();
 
 	if ($education !== "") {
@@ -34,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($race !== "") {
 		$whereParts[] = "race LIKE '%$race%' ";
 	}
+	if ($type !== "") {
+		$whereParts[] = "type LIKE '%$type%' ";
+	}
 		
 	$sql = "SELECT * FROM Users ";
 	if(count($whereParts)) {
@@ -44,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($result->num_rows > 0) {
 		$users = ""; 
 		while($row = $result->fetch_assoc()) {
-			if ($_SESSION["username"] !== $row["username"]) {
+			if ($_SESSION["username"] !== $row["username"] && isset($row["firstname"])) {
 				$messageLink = 	  $row["facebook"];
 				list($serial) = sscanf($messageLink, "https://www.facebook.com/%s");
 				$messageLink = "https://www.facebook.com/messages/t/".$serial;
