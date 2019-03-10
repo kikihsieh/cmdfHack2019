@@ -8,6 +8,10 @@
   min-height: 100vh;
 }
 
+.edit_container {
+  padding-left: 200px;
+}
+
 .bg-image {
   background-image: url("yellow.png");
   margin: 0;
