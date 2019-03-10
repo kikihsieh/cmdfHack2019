@@ -2,7 +2,7 @@
 	session_start();
 	require 'connect.php';
 	$username = $_SESSION['username'];
-	$password = $_SESSION['password'];
+	//$password = $_SESSION['password'];
 	$sql = "SELECT * FROM Users WHERE username='".$username."'";
 	$result=$conn->query($sql);
 	if($result->num_rows==1){
