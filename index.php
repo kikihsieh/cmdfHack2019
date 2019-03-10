@@ -15,7 +15,11 @@ include 'src/login.php';
 <body>
 <div class="container-fluid">
 	<div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 pk-image"></div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 pk-image">
+		    <img style="margin-top: 28%; margin-left: 10%;" src="a.png" alt="atom logo" height="400" width="400">
+    
+</div>
+		
 		
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
