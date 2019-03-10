@@ -14,11 +14,11 @@ include 'query.php';
 	<body>
 		<div class="container-fluid">
 			<div class="row no-gutter">
-				<div class="d-none d-md-flex col-md-4 col-lg-4 bg-image">
-		            <div class="py-2 make-me-sticky flex-grow-1">
+				<div class=" d-none d-md-flex col-md-4 col-lg-4 profile-bg">
+		            <div class="py-2 flex-grow-1">
 		                <div class="sidebar flex-sm-column">
-		                    <h1 class="my-4">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
-		                    <div class="col content">
+		                    <h1 class="my-4 content-left">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
+		                    <div class="col">
 		                    	<form class="form-horizontal" method="POST" action="#">
 									<div class="form_input">
 										<select id="filter_education" class="form-control" name="filter_education" placeholder=" Education ">
@@ -29,6 +29,7 @@ include 'query.php';
 		                					<option value="PhD">PhD</option>
 		                					<option value="Diploma">Diploma</option>
 		                					<option value="Associate">Associate</option>
+		                					<option value="">n/a</option> 
   										</select>
 									</div>
 									<hr>
@@ -46,6 +47,7 @@ include 'query.php';
 											<option value="Health Sciences">Health Sciences</option>
 											<option value="Biology">Biology</option>
 											<option value="Chemistry">Chemistry</option>
+											<option value="">n/a</option> 
   										</select>
 									</div>
 									<hr>
@@ -293,6 +295,7 @@ include 'query.php';
 											<option value="Yemen">Yemen</option> 
 											<option value="Zambia">Zambia</option> 
 											<option value="Zimbabwe">Zimbabwe</option>
+											<option value="">n/a</option> 
 		                				</select>
 									</div>
 									<hr>
@@ -371,6 +374,7 @@ include 'query.php';
 											<option value="Vietnamese">Vietnamese</option>
 											<option value="Welsh">Welsh</option>
 											<option value="Xhosa">Xhosa</option>
+											<option value="">n/a</option> 
 		                				</select>
 									</div>
 									<hr>
@@ -382,6 +386,7 @@ include 'query.php';
 		                					<option value="Black or African American">Black or African American</option>
 		                					<option value="Hispanic or Latino">Hispanic or Latino</option>
 		                					<option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+		                					<option value="">n/a</option> 
 		                				</select>
 									</div>
 									<hr>
@@ -395,7 +400,7 @@ include 'query.php';
 		                </div>
 		            </div>
 		        </div>
-				<div class="col content">
+				<div class="col content-right">
 					<?php echo displayResults(); ?>
 				</div>
 			</div>
