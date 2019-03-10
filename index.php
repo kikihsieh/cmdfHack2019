@@ -15,7 +15,7 @@ include 'src/login.php';
 <body>
 <div class="container-fluid">
 	<div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 pk-image">
+    <div class="d-none d-md-flex col-md-4 col-lg-6" style="background-color:#b36dff">
 		    <img style="margin-top: 28%; margin-left: 10%;" src="a.png" alt="atom logo" height="400" width="400">
     
 </div>
@@ -28,7 +28,7 @@ include 'src/login.php';
             <div class="col-md-9 col-lg-8 mx-auto">
 			<center> 
 				<h3 class="login-heading mb-4">
-					<a class="typewrite" data-period="2000" data-type='[ "Mentorship.", "Empowerment", "Femtr", "Welcome :)"]'>
+					<a class="typewrite" data-period="2000" data-type='[ "Mentorship.", "Empowerment.", "F E M T R", "Welcome :)"]'>
 						<span class="wrap"></span>
 					</a>
 				</h3>

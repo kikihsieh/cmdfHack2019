@@ -516,7 +516,9 @@
 		            <div class="col-md-8">
 		              <input type="submit" class="btn btn-primary" value="Save Changes">
 		              &nbsp;&nbsp;&nbsp;
-		              <input type="reset" class="btn btn-default" value="Cancel">
+		              <!---<input type="reset" class="btn btn-default" value="Cancel">-->
+									<a href="profile.php" target="_parent" class="btn btn-primary">Cancel</a>
+
 		            </div>
 		          </div>
 		        </form>
