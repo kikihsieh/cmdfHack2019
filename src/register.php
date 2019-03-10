@@ -61,7 +61,7 @@ if(isset($_POST['reg_username'])) {
 		echo 'passwords dont match, try again!';
 		return;
 	} else {
-		$sql = "INSERT INTO Users VALUES ('$username', '$password', null, null, null, null, null, null, null, null, null, null, null)";
+		$sql = "INSERT INTO Users VALUES ('$username', '$password', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null)";
 	}
 
 	if ($conn->query($sql) === TRUE) {
