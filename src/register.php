@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Welcome to your Web App</title>
+	<title>Welcome to Femtr!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 

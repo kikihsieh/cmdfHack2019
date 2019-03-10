@@ -10,24 +10,44 @@ include 'src/login.php';
 	<title>Welcome to your Web App</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/typewriter.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		LOGIN:
-		<form method="POST" action="#">
-			<div class="form_input">
-				<input type="text" name="log_username" placeholder=" Enter Your Name"/>
+<div class="container-fluid">
+	<div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 pk-image"></div>
+		
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+			<center> 
+				<h3 class="login-heading mb-4">
+					<a class="typewrite" data-period="2000" data-type='[ "Mentorship.", "Empowerment", "Femtr", "Welcome :)"]'>
+						<span class="wrap"></span>
+					</a>
+				</h3>
+			
+			
+			<form method="POST" action="#">
+			
+				<div class="form-label-group">
+					<input type="text" id="inputUsername" class="form-control" name="log_username" placeholder=" Enter Your Name" required autofocus/>
+					<label for="inputUsername"> Enter Your Username</label>
+				</div>
+
+			<div class="form-label-group">
+				<input type="password" id="inputPass" name="log_password" class="form-control" placeholder=" Enter Your Password " required/>
+				<label for="inputPass">Enter Your Password</label>
 			</div>
-			<div class="form_input">
-				<input type="password" name="log_password" placeholder=" Enter Your Password "/>
-			</div>
-			<input type="submit" name="submit" value="LOGIN" class="btn-login"/>
+			
+			<button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="submit" value="LOGIN" class="btn-login">Sign In</button>
+			
 		</form>
 		<?php echo loginHTML(); ?>
 		<br>
-		REGISTER:
-		<span><a href="src/register.php">register here!</a></span>
-		
+		<a href="src/register.php" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Register</a>
 	</div>
 
 	<!-- scripts -->

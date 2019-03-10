@@ -8,11 +8,15 @@
   min-height: 100vh;
 }
 
-
 .bg-image {
-  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
-  background-size: cover;
-  background-position: center;
+  background-image: url("yellow.png");
+  margin: 0;
+ 	background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.wecan-img{
+  background-image: url("wecan.png");
+  margin: 0;
 }
 
 .login-heading {
