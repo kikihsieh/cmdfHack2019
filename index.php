@@ -1,8 +1,7 @@
 <?php 
-	include_once 'src/connect.php';
+include 'src/connect.php';
+include 'src/login.php'; 
 ?>
-
-<?php include 'src/login.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -13,8 +12,20 @@
 </head>
 <body>
 	<div class="container">
-		<?php echo loginHTML($conn); ?>
-		<span>or<a href="src/register.php">register here</a></span>
+		LOGIN:
+		<form method="POST" action="#">
+			<div class="form_input">
+				<input type="text" name="log_username" placeholder=" Enter Your Name"/>
+			</div>
+			<div class="form_input">
+				<input type="password" name="log_password" placeholder=" Enter Your Password "/>
+			</div>
+			<input type="submit" name="submit" value="LOGIN" class="btn-login"/>
+		</form>
+		<?php echo loginHTML(); ?>
+		<br>
+		REGISTER:
+		<span><a href="src/register.php">register here!</a></span>
 	</div>
 
 	<!-- scripts -->
