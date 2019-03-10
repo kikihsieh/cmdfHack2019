@@ -76,7 +76,7 @@
 		                	<option value="<?php echo $type?>" selected="selected"><?php echo $type?></option>
 		                	<option value="Mentor">Mentor</option>
 		                	<option value="Mentee">Mentee</option>
-		                	<option value="Both">Both</option>
+		                	<option value="Both">Both Mentor and Mentee!</option>
 		                </select>
 		              </div>
 		            </div>
