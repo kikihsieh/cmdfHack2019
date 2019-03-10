@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include 'query.php'; 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,14 +20,62 @@
 				<div class="d-none d-md-flex col-sm-4 bg-image">
 		            <div class="py-2 sticky-top flex-grow-1">
 		                <div class="sidebar flex-sm-column">
-		                    <h1 class="my-4">🌏 Travel 
-		                    	<small>bucket list!</small>
+		                    <h1 class="my-4">🌏 Welcome  
+								<?php echo displayName(); ?>
 		                    </h1>
+		                    <div class="col content">
+		                    	<form method="POST" action="#">
+									<div class="form_input">
+										<select id="user_country" class="form-control" name="education" placeholder=" Education ">
+    										<option value="high_school">High School</option>
+    										<option value="bachelors">Bachelors</option>
+    										<option value="masters">Masters</option>
+    										<option value="phd">PhD</option>
+  										</select>
+									</div>
+									<div class="form_input">
+										<select id="user_country" class="form-control" name="industry" placeholder=" Education ">
+    										<option value="information_security_analyst">Information Security Analyst</option>
+    										<option value="computer_systems_analyst">Computer Systems Analyst</option>
+    										<option value="software_developer">Software Developer</option>
+    										<option value="web_developer">Web Developer</option>
+    										<option value="computer_scientist">Computer and Information Research Scientist</option>
+    										<option value="computer_hardware_engineer">Computer Hardware Engineer</option>
+    										<option value="computer_network_architect">Computer Network Architect</option>
+    										<option value="game_developer">Game Developer</option>
+    										<option value="health_sciences">Health Sciences</option>
+    										<option value="biology">Biology</option>
+    										<option value="chemistry">Chemistry</option>
+  										</select>
+									</div>
+									<div class="form_input">
+										<select id="user_country" class="form-control" name="race">
+		                					<option value="native">American Indian or Alaska Native</option>
+		                					<option value="asian">Asian</option>
+		                					<option value="black">Black or African American</option>
+		                					<option value="hispanic">Hispanic or Latino</option>
+		                					<option value="islander">Native Hawaiian or Other Pacific Islander</option>
+		                					<option value="white">White</option>
+		                				</select>
+									</div>
+									<div class="form_input">
+										<select id="user_country" class="form-control" name="language">
+		                					<option value="native">English</option>
+		                					<option value="asian">French</option>
+		                					<option value="black">Mandrin</option>
+		                					<option value="hispanic">Arabic</option>
+		                				</select>
+									</div>
+									<input type="checkbox" name="mentor" value="mentor">Find Mentor<br>
+									<input type="checkbox" name="mentee" value="mentee">Find Mentee<br>
+									<input type="submit" name="submit" value="Submit" class="btn-login"/>
+								</form>
+							</div>
 		                </div>
 		            </div>
 		        </div>
 				<div class="col content">
-					<?php echo displayProfile(); ?>
+					<?php echo displayResults(); ?>
 				</div>
 			</div>
 		</div>
@@ -39,44 +91,14 @@
 </html>
 
 <?php
-function displayProfile() {
-	/* TODO need to give filters to write up the query using a POST*/
-	session_start();
 
-	require 'connect.php';
+function displayName() {
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 	
+    require 'connect.php';
 	$username = $_SESSION['username'];
-	$sql = "SELECT username FROM Users WHERE username = '$username'";
-	$result = $conn->query($sql);
-	/* template
-	
-	*/
-	if ($result->num_rows > 0) {
-		$destinations = '<h1 class="my-4">→ <small>'.$row["username"].'</small></h1><br>'; 
-		while($row = $result->fetch_assoc()) { 
-			$destinations .=	'<div class="row">';
-			$destinations .=	    '<div class="col-lg-4">';
-			$destinations .=	      '<img class="dest-pic" src="'.$row["pic_url"].'">';
-			$destinations .=	    '</div>';
-			$destinations .=	    '<div class="col-lg-8 ml-auto">';
-			$destinations .=	      '<h3>✈️ '.$row["username"].'</h3>';
-			$destinations .=	      '<p>'.$row["education"];
-			$destinations .=	      '<br> rating: ';
-										for ($i = 0; $i < $row["rating"]; $i++) {
-							    			$destinations .= '⭐';
-										} 
-			$destinations .=	      '<br> 📍'.$row["city_name"]. ', <b>@</b>'. $row["address"] . '</p>';
-			$destinations .=		  '<div class="reviews"><div class="review-title"><b>Reviews:</b></div>';
-			$destinations .=		  '</div>';
-			$destinations .=		  '<div class="activities"><div class="activity-title"><b>Activities:</b></div>';
-			$destinations .=		  '</div>';
-			$destinations .=	    '</div>';
-			$destinations .=	'</div><hr>';
-		}
-		echo $destinations;
-	}
-	else {
-		echo "<p>no destinations :(</p>"; 
-	}
+	echo '<small>'.$username.'</small>';
 }
-
 ?>
