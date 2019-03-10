@@ -48,6 +48,8 @@ include 'query.php';
 											<option value="Computer Network Architect">Computer Network Architect</option>
 											<option value="Game Developer">Game Developer</option>
 											<option value="Health Sciences">Health Sciences</option>
+											<option value="Computer Science">Computer Science</option>
+											<option value="Mathematics">Mathematics</option>
 											<option value="Biology">Biology</option>
 											<option value="Chemistry">Chemistry</option>
 											<option value="">n/a</option> 
@@ -389,6 +391,7 @@ include 'query.php';
 		                					<option value="Black or African American">Black or African American</option>
 		                					<option value="Hispanic or Latino">Hispanic or Latino</option>
 		                					<option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+		                					<option value="White">White</option>
 		                					<option value="">n/a</option> 
 		                				</select>
 									</div>

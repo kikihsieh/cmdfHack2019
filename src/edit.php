@@ -115,6 +115,8 @@
 							<option value="Computer Network Architect">Computer Network Architect</option>
 							<option value="Game Developer">Game Developer</option>
 							<option value="Health Sciences">Health Sciences</option>
+							<option value="Computer Science">Computer Science</option>
+							<option value="Mathematics">Mathematics</option>
 							<option value="Biology">Biology</option>
 							<option value="Chemistry">Chemistry</option>
 		                </select>
