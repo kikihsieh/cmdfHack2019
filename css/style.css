@@ -2,7 +2,10 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
-
+p {
+	font-family:'Century Gothic', sans-serif !important ;
+	font-size: 13px;
+}
 .login,
 .image {
   min-height: 100vh;
