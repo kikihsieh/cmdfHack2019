@@ -8,14 +8,16 @@ function displayResults() {
 if(isset($_POST['education'])) {
 		require 'connect.php';
 
-	$username = $_POST['log_username'];
-	$sql = "SELECT * FROM Users WHERE username = '$username'";
+	$education = $_POST['education'];
+
+	$sql = "SELECT *
+	FROM Users
+	WHERE education = '$education'";
 	$result = $conn->query($sql);
 	/* template
 	
 	*/
 	if ($result->num_rows > 0) {
-		$destinations = '<h1 class="my-4">→ <small>'.$row["username"].'</small></h1><br>'; 
 		while($row = $result->fetch_assoc()) { 
 			$destinations .=	'<div class="row">';
 			$destinations .=	    '<div class="col-lg-4">';
@@ -25,9 +27,6 @@ if(isset($_POST['education'])) {
 			$destinations .=	      '<h3>✈️ '.$row["username"].'</h3>';
 			$destinations .=	      '<p>'.$row["education"].'</p>';
 			$destinations .=	      '<br> rating: ';
-										for ($i = 0; $i < $row["rating"]; $i++) {
-							    			$destinations .= '⭐';
-										} 
 			$destinations .=	      '<br> 📍'.$row["city_name"]. ', <b>@</b>'. $row["address"] . '</p>';
 			$destinations .=		  '<div class="reviews"><div class="review-title"><b>Reviews:</b></div>';
 			$destinations .=		  '</div>';

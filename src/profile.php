@@ -27,6 +27,7 @@ include 'query.php';
 		                    	<form method="POST" action="#">
 									<div class="form_input">
 										<select id="user_country" class="form-control" name="education" placeholder=" Education ">
+											<option value="*">N/A</option>
     										<option value="high_school">High School</option>
     										<option value="bachelors">Bachelors</option>
     										<option value="masters">Masters</option>
@@ -60,10 +61,10 @@ include 'query.php';
 									</div>
 									<div class="form_input">
 										<select id="user_country" class="form-control" name="language">
-		                					<option value="native">English</option>
-		                					<option value="asian">French</option>
-		                					<option value="black">Mandrin</option>
-		                					<option value="hispanic">Arabic</option>
+		                					<option value="english">English</option>
+		                					<option value="french">French</option>
+		                					<option value="mandrin">Mandrin</option>
+		                					<option value="arabic">Arabic</option>
 		                				</select>
 									</div>
 									<input type="checkbox" name="mentor" value="mentor">Find Mentor<br>
