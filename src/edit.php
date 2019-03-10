@@ -19,6 +19,7 @@
 		$email = $row['email'];
 		$linkedin = $row['linkedin'];
 		$twitter = $row['twitter'];
+		$facebook = $row['facebook'];
 		$mentor = $row['mentor'];
 		$mentee = $row['mentee'];
 		$buddy = $row['buddy'];
@@ -478,18 +479,25 @@
 		              <input class="form-control" type="text" name="edit_email" value="<?php echo $email?>">
 		            </div>
 		          </div>
-							<br>
+				  <br>
+				  <div class="form-row">
+		            <label class="col-lg-8 control-label">Facebook Messenger:</label>
+		            <div class="col-lg-8">
+		              <input class="form-control" type="text" name="edit_facebook" value="<?php echo $facebook?>">
+		            </div>
+		          </div>
+				  <br>
 		          <div class="form-row">
 		            <label class="col-lg-4 control-label">Linkedin:</label>
-								<label class="col-lg-8 control-label">Twitter:</label>
+					<label class="col-lg-8 control-label">Twitter:</label>
 		            <div class="col-lg-4">
 		              <input class="form-control" type="text" name="edit_linkedin" value="<?php echo $linkedin?>">
 		            </div>
 		            <div class="col-lg-4">
 		              <input class="form-control" type="text" name="edit_twitter" value="<?php echo $twitter?>">
 		            </div>
-								</div>
-								<br>
+				  </div>
+				  <br>
 		          <div class="form-row">
 		            <label class="col-md-8 control-label"></label>
 		            <div class="col-md-8">
@@ -528,13 +536,14 @@
 		$email = $_POST['edit_email'];
 		$linkedin = $_POST['edit_linkedin'];
 		$twitter = $_POST['edit_twitter'];
+		$facebook = $_POST['edit_facebook'];
 
 		
 		//echo $username .'<br>'. 'pic_url' .'<br>'. $firstname .'<br>'. $lastname .'<br>'. $bio .'<br>'. $education .'<br>'. $industry .'<br>'. $interests .'<br>'. $country .'<br>'. $language .'<br>'. $race .'<br>'. $email .'<br>'. $linkedin .'<br>'. $twitter;
 		
 
 		$sql = "UPDATE Users SET pic_url='pic_url', firstname='$firstname', lastname='$lastname', bio='$bio', education='$education', industry='$industry', interests='$interests', country='$country',
-			language='$language', race='$race', email='$email', linkedin='$linkedin', twitter='$twitter' WHERE username='$username'";
+			language='$language', race='$race', email='$email', linkedin='$linkedin', twitter='$twitter', facebook='$facebook' WHERE username='$username'";
 		// echo '<br><br>' . $sql;	
 		
 		if ($conn->query($sql) === TRUE) {

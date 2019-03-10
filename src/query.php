@@ -44,19 +44,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($result->num_rows > 0) {
 		$users = ""; 
 		while($row = $result->fetch_assoc()) {
-			$users .=	'<div class="row">';
-			$users .=	    '<div class="col-lg-4">';
-			$users .=	      '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="dest-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">';
-			$users .=	    '</div>';
-			$users .=	    '<div class="col-lg-8 ml-auto">';
-			$users .=	      '<h3>'.$row["username"].'</h3>';
-			$users .=	      '<p><b>' . $row["firstname"] . ' ' . $row["lastname"].'</b><br>';
-			$users .=	      $row["bio"] . '<br>';
-			$users .=		  '<b> interests: </b>' . $row["interests"] . '<br><br>';
-			$users .=	      $row["industry"] .' | '. $row["education"] . '<br>';
-			$users .=	      $row["email"] . ' ' . $row["twitter"] . ' ' . $row["linkedin"] . '</p>';
-			$users .=	    '</div>';
-			$users .=	'</div><hr>';
+			if ($_SESSION["username"] !== $row["username"]) {
+				$messageLink = 	  $row["facebook"];
+				list($serial) = sscanf($messageLink, "https://www.facebook.com/%s");
+				$messageLink = "https://www.facebook.com/messages/t/".$serial;
+
+				$users .=	'<div class="row">';
+				$users .=	    '<div class="col-lg-4">';
+				$users .=	      '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="dest-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">';
+				$users .=	    '</div>';
+				$users .=	    '<div class="col-lg-8 ml-auto">';
+				$users .=	      '<h3>'.$row["username"].'</h3>';
+				$users .=	      '<p><b>' . $row["firstname"] . ' ' . $row["lastname"].'</b><br>';
+				$users .=	      $row["bio"] . '<br>';
+				$users .=		  '<b> interests: </b>' . $row["interests"] . '<br><br>';
+				$users .=	      $row["industry"] .' | '. $row["education"] . '<br>';
+				//$users .=	      $row["email"] . ' ' . $row["twitter"] . ' ' . $row["linkedin"] . '</p>';
+
+
+				$users .=	      '<a href="https://twitter.com/' .$row["twitter"].'" target="_blank"> <img class="linkImg" src="img/twitter.png"></a> ';
+				$users .=	      '<a href="https://linkedin.com/in/'.$row["linkedin"].'" target="_blank"><img class="linkImg" src="img/linkedin.png"></a> ';
+				$users .=	      '<a href="'.$messageLink.'" target="_blank"><img class="linkImg" src="img/facebook.png"></a> ';
+				$users .=	      '<a href="mailto:'.$row["email"].'" target="_blank"><img class="linkImg" src="img/email.png"></a> ';
+				$users .=	    '</div> ';
+				$users .=	'</div><hr>';
+			}
 		}
 		echo $users;
 	}

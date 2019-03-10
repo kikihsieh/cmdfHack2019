@@ -3,12 +3,36 @@
   --input-padding-y: 0.75rem;
 }
 
+#facebook-input {
+  background-image:url(img/facebook.png); 
+  background-repeat: no-repeat; 
+}
+
 .dest-pic {
   object-fit: cover;
   width:250px;
   height:250px;
 }
 
+.linkImg {
+  width:25px;
+  height:25px;
+}
+
+.dest-pic {
+  object-fit: cover;
+  width:200px;
+  height:200px;
+}
+
+p {
+  font-family:'Century Gothic', sans-serif !important ;
+  font-size: 14px;
+}
+
+.content {
+  padding-top: 20px;
+}
 
 .content-left {
   padding-top: 20px;
