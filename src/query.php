@@ -5,7 +5,7 @@ function displayResults() {
     { 
         session_start(); 
     } 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require 'connect.php';
 
 	$education = (isset($_POST['filter_education'])) ? $_POST['filter_education'] : "";
@@ -55,17 +55,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 				$users .=	'<div class="row">';
 				$users .=	    '<div class="col-lg-4">';
-				$users .=	      '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="dest-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">';
+				$users .=	      '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="dest-pic" src="'. $row["pic_url"] .'">';
 				$users .=	    '</div>';
 				$users .=	    '<div class="col-lg-8 ml-auto">';
-				$users .=	      '<h3>'.$row["username"].'</h3>';
+				$users .=	      '<h3>👑 '.$row["username"].'</h3>';
 				$users .=	      '<p><b>' . $row["firstname"] . ' ' . $row["lastname"].'</b><br>';
 				$users .=	      $row["bio"] . '<br>';
 				$users .=		  '<b> interests: </b>' . $row["interests"] . '<br><br>';
-				$users .=	      $row["industry"] .' | '. $row["education"] . '<br>';
-				//$users .=	      $row["email"] . ' ' . $row["twitter"] . ' ' . $row["linkedin"] . '</p>';
-
-
+				$users .=	      '🤖'.$row["industry"] .'| 🎓'. $row["education"] . '|';
+				if (isset($row["country"])) {
+					$users .= '📍'.$row["country"]. '<br>';
+				}
 				$users .=	      '<a href="https://twitter.com/' .$row["twitter"].'" target="_blank"> <img class="linkImg" src="img/twitter.png"></a> ';
 				$users .=	      '<a href="https://linkedin.com/in/'.$row["linkedin"].'" target="_blank"><img class="linkImg" src="img/linkedin.png"></a> ';
 				$users .=	      '<a href="'.$messageLink.'" target="_blank"><img class="linkImg" src="img/facebook.png"></a> ';

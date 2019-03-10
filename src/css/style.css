@@ -59,7 +59,7 @@ html, body, .container-fluid {
 }
 
 .sidebar {
-  background-color: #ffe3bc;
+  background-color: #C7CEEA;
 }
 
 @media (min-width: 992px) {
@@ -70,7 +70,7 @@ html, body, .container-fluid {
     bottom: 0;
     z-index: 1000;
     display: block;
-    background-color: #ffe3bc;
+    background-color: #C7CEEA;
   }
 }
 

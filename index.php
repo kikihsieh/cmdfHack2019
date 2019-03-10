@@ -15,12 +15,9 @@ include 'src/login.php';
 <body>
 <div class="container-fluid">
 	<div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6" style="background-color:#b36dff">
+    <div class="d-none d-md-flex col-md-4 col-lg-6" style="background-color:#FF9AA2">
 		 <img style="margin-top: 28%; margin-left: 10%;" src="a.png" alt="atom logo" height="400" width="400">
-	
-    
 </div>
-		
 		
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
@@ -53,8 +50,8 @@ include 'src/login.php';
 		<?php echo loginHTML(); ?>
 		<br>
 		<a href="src/register.php" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Register</a>
-		<img style="margin-top: 28%; margin-left: 10%;" src="cherry.png" alt="atom logo" height="20" width="20"> 
-		<p>Powered by: Pixuel</p>
+		<img style="margin-top: 28%; margin-left: 5%;" src="cherry.png" alt="atom logo" height="20" width="23">
+		<p style="font-size: 10px; margin:5px;">Powered by: Pixuel</p>
 
 	</div>
 

@@ -17,10 +17,8 @@ include 'query.php';
 				<div class=" d-none d-md-flex col-md-4 col-lg-4">
 		            <div class="py-2 flex-grow-1">
 		                <div class="sidebar flex-sm-column">
-		                
-
-		                    <h1 class="my-4 content button-header">&nbsp&nbsp👩‍💻Welcome <?php echo displayName(); ?></h1>
-
+		                    <h1 class="my-4 content button-header">&nbsp&nbsp <?php echo displayAvatar(); ?> Hey <?php echo displayName(); ?>! </h1>
+		                    
 		                    <div class="col">
 		                    	<form class="form-horizontal" method="POST" action="#">
 									<div class="form_input">
@@ -438,5 +436,22 @@ function displayName() {
     require 'connect.php';
 	$username = $_SESSION['username'];
 	echo '<small>'.$username.'</small>';
+}
+
+function displayAvatar() {
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 	
+    require 'connect.php';
+	$username = $_SESSION['username'];
+	$sql = "SELECT pic_url FROM Users WHERE username='$username'";
+	$result = $conn->query($sql);
+
+	if ($result->num_rows === 1) {
+		$row = $result->fetch_assoc();
+		$pic_url = $row["pic_url"];
+		echo '<img src="'.$pic_url.'" style="height: 70px; border-radius: 50%; margin-bottom: 5px;">';
+	}
 }
 ?>

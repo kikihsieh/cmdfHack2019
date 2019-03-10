@@ -558,7 +558,7 @@
 		//echo $username .'<br>'. 'pic_url' .'<br>'. $firstname .'<br>'. $lastname .'<br>'. $bio .'<br>'. $education .'<br>'. $industry .'<br>'. $interests .'<br>'. $country .'<br>'. $language .'<br>'. $race .'<br>'. $email .'<br>'. $linkedin .'<br>'. $twitter;
 		
 
-		$sql = "UPDATE Users SET pic_url='pic_url', firstname='$firstname', lastname='$lastname', bio='$bio', education='$education', industry='$industry', interests='$interests', country='$country', type='$type',
+		$sql = "UPDATE Users SET firstname='$firstname', lastname='$lastname', bio='$bio', education='$education', industry='$industry', interests='$interests', country='$country', type='$type',
 			language='$language', race='$race', email='$email', linkedin='$linkedin', twitter='$twitter', facebook='$facebook' WHERE username='$username'";
 		// echo '<br><br>' . $sql;	
 		
