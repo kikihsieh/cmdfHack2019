@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'src/connect.php';
 include 'src/login.php'; 
 ?>
