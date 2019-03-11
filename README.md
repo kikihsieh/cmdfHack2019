@@ -13,6 +13,6 @@ Login page:
 
 
 Group Members:  
-Kiki Hsieh  
-Nada Kourkmas  
-Mayesha Kabir  
+[Kiki Hsieh](https://github.com/kikihsieh)  
+[Nada Kourkmas](https://github.com/nadakourkmas)  
+[Mayesha Kabir](https://github.com/mayeshakabir)  
