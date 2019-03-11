@@ -20,7 +20,7 @@
             <div class="col-md-9 col-lg-8 mx-auto">
 						<center>
 						<h3 class="login-heading mb-4">Become a Femtr!</h3>
-						<form method="post" action="/cmdfHack2019/src/register.php">
+						<form method="post" action="#">
 
 							<div class="form-label-group">
 								<input type="text" id="inputUsername" name="reg_username"  class="form-control" placeholder=" Enter Your Name" required autofocus/>
