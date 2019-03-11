@@ -48,7 +48,7 @@
 		      <div class="col-md-9 personal-info">
 				<h3>User Info</h3>
 				<br>
-		        <form class="form-horizontal" method="post" action="/cmdfHack2019/src/edit.php">
+		        <form class="form-horizontal" method="post" action="#">
 		          <div class="form-row">
 							<label class="col-lg-4 control-label">First Name:</label>
 								<label class="col-lg-8 control-label">Last Name:</label>
